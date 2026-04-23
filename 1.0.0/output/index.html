@@ -1,0 +1,1260 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An active CLI manager for bioinformatics project scaffolding, file routing, cleaning, and reporting.">
+      
+      
+        <meta name="author" content="Jyotirmoy Das">
+      
+      
+      
+        <link rel="prev" href="../parameters/">
+      
+      
+        <link rel="next" href="../developers/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Directory Structure - BfxPM (Bioinformatician's Project Manager)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../styles/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#directory-structures" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="BfxPM (Bioinformatician&#39;s Project Manager)" class="md-header__button md-logo" aria-label="BfxPM (Bioinformatician's Project Manager)" data-md-component="logo">
+      
+
+<a href="https://github.com/JD2112" target="_blank" style="display:flex; align-items:center; text-decoration:none;">
+  <img src="../images/JD_logo.png" alt="Logo" style="height:24px; margin-right:8px;">
+</a>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BfxPM (Bioinformatician's Project Manager)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Directory Structure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/JD2112/bioinformatics_project_manager" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../usage/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Usage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ai_agent/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI Agent
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../parameters/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Parameters
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Directory Structure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../developers/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  For Developers
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BfxPM (Bioinformatician&#39;s Project Manager)" class="md-nav__button md-logo" aria-label="BfxPM (Bioinformatician's Project Manager)" data-md-component="logo">
+      
+
+<a href="https://github.com/JD2112" target="_blank" style="display:flex; align-items:center; text-decoration:none;">
+  <img src="../images/JD_logo.png" alt="Logo" style="height:24px; margin-right:8px;">
+</a>
+    </a>
+    BfxPM (Bioinformatician's Project Manager)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/JD2112/bioinformatics_project_manager" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+  
+  <li class="md-nav__item">
+    
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+  
+  <li class="md-nav__item">
+    
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+  
+  <li class="md-nav__item">
+    
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+  
+  <li class="md-nav__item">
+    
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+  
+  <li class="md-nav__item">
+    
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Directory Structure
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Directory Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base Directory Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hidden-metadata-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hidden Metadata Output
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hidden Metadata Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-structure-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Structure Maps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-internal-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Internal Cache
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-reports-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Reports Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleaning-subsystem-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleaning Subsystem Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-scaffolding-scientific-attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Scaffolding &amp; Scientific Attribution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bfxpm-init" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bfxpm init
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bfxpm-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bfxpm scan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bfxpm-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bfxpm tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+  
+  <li class="md-nav__item">
+    
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+  
+  <li class="md-nav__item">
+    
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base Directory Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hidden-metadata-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hidden Metadata Output
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hidden Metadata Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-structure-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Structure Maps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-internal-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Internal Cache
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-reports-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Reports Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleaning-subsystem-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleaning Subsystem Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-scaffolding-scientific-attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Scaffolding &amp; Scientific Attribution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bfxpm-init" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bfxpm init
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bfxpm-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bfxpm scan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bfxpm-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bfxpm tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+
+<h1 id="directory-structures">Directory Structures<a class="headerlink" href="#directory-structures" title="Permanent link">&para;</a></h1>
+<p>By shifting you towards a standardized framework, BfxPM aims to solve the "spaghetti data" problem. This documentation explains what output directories and logs BfxPM produces when running tools like <code>init</code>, <code>organize</code>, and <code>report</code>.</p>
+<h2 id="base-directory-structure">Base Directory Structure<a class="headerlink" href="#base-directory-structure" title="Permanent link">&para;</a></h2>
+<p>When running <code>bfxpm init</code>, the following standard directory tree is built (without git repo): </p>
+<details class="info" open="open">
+<summary>Base Directory Structure</summary>
+<p>See <a href="#bfxpm-tree">bfxpm tree</a> for the directory structure with git repo.</p>
+</details>
+<div class="highlight"><pre><span></span><code>My_Project/
+├──<span class="w"> </span>.bfxpm/<span class="w">              </span><span class="c1"># Internal BfxPM metadata</span>
+├──<span class="w"> </span>data/
+│<span class="w">   </span>├──<span class="w"> </span>meta/<span class="w">            </span><span class="c1"># Sample sheets, clinical metadata</span>
+│<span class="w">   </span>├──<span class="w"> </span>raw_external/<span class="w">    </span><span class="c1"># Unmodified incoming sequences (FASTQ, FASTA)</span>
+│<span class="w">   </span>└──<span class="w"> </span>raw_internal/<span class="w">    </span><span class="c1"># Processed alignments and variants (BAM, VCF)</span>
+├──<span class="w"> </span>scripts/
+│<span class="w">   </span>├──<span class="w"> </span>nextflow/<span class="w">        </span><span class="c1"># Nextflow pipeline files (.nf, nextflow.config)</span>
+│<span class="w">   </span>├──<span class="w"> </span>snakemake/<span class="w">       </span><span class="c1"># Snakemake pipeline files (Snakefile, .smk)</span>
+│<span class="w">   </span>└──<span class="w"> </span>docker/<span class="w">          </span><span class="c1"># Dockerfile definitions</span>
+├──<span class="w"> </span>doc/<span class="w">                 </span><span class="c1"># Project documentation and manuscripts</span>
+├──<span class="w"> </span>intermediate/<span class="w">        </span><span class="c1"># R objects, analysis intermediates</span>
+├──<span class="w"> </span>logs/<span class="w">                </span><span class="c1"># Execution logs, SLURM outputs</span>
+│<span class="w">   </span>└──<span class="w"> </span>logs.qmd<span class="w">         </span><span class="c1"># Lab notebook / run log</span>
+├──<span class="w"> </span>notebooks/<span class="w">           </span><span class="c1"># Jupyter, Quarto, R Markdown notebooks</span>
+├──<span class="w"> </span>results/
+│<span class="w">   </span>├──<span class="w"> </span>figures/<span class="w">         </span><span class="c1"># Output visualizations (PNG, SVG, PDF)</span>
+│<span class="w">   </span>├──<span class="w"> </span>reports/<span class="w">         </span><span class="c1"># Summary reports (MultiQC, PROJECT_SUMMARY.md)</span>
+│<span class="w">   </span>└──<span class="w"> </span>tables/<span class="w">          </span><span class="c1"># Tabular outputs (CSV, TSV, XLSX)</span>
+├──<span class="w"> </span>scratch/<span class="w">             </span><span class="c1"># Temporary workspace</span>
+├──<span class="w"> </span>project.yml<span class="w">          </span><span class="c1"># Project metadata (name, author, version)</span>
+└──<span class="w"> </span>README.md
+</code></pre></div>
+<h2 id="hidden-metadata-output">Hidden Metadata Output<a class="headerlink" href="#hidden-metadata-output" title="Permanent link">&para;</a></h2>
+<p>To safely orchestrate large file operations, BfxPM writes critical mapping dictionaries and history files.</p>
+<h3 id="1-structure-maps">1. Structure Maps<a class="headerlink" href="#1-structure-maps" title="Permanent link">&para;</a></h3>
+<p>Created when running <code>bfxpm map</code> or when invoking an extensive <code>bfxpm organize</code>.</p>
+<ul>
+<li><strong>Where:</strong> <code>bfxpm_structure_map_YYYYMMDD_HHMMSS.json</code> in the root dir.</li>
+<li><strong>What:</strong> A JSON document cataloging the absolute path, size, and hash state of every single file <em>before</em> a structural migration begins. Used as a rollback snapshot.</li>
+</ul>
+<h3 id="2-internal-cache">2. Internal Cache<a class="headerlink" href="#2-internal-cache" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Where:</strong> <code>.bfxpm/</code> hidden folder.</li>
+<li><strong>What:</strong> Project initialization dates, user configuration, and developer tags injected dynamically by the <code>init</code> command.</li>
+</ul>
+<h2 id="summary-reports-output">Summary Reports Output<a class="headerlink" href="#summary-reports-output" title="Permanent link">&para;</a></h2>
+<p>When sharing computational projects with PIs or external teams, it's vital to show exactly the footprint and status of your work.</p>
+<p>Invoking <code>bfxpm report</code> queries your Git log, counts the FASTQ samples, calculates Total GB footprints, and prints an output tree.</p>
+<p>It generates these 3 files in <strong><code>results/reports/</code></strong>:</p>
+<ul>
+<li><strong><code>PROJECT_SUMMARY.md</code></strong>: Human-readable markdown table and statistics summary.</li>
+<li><strong><code>summary.json</code></strong>: Machine readable array objects for downstream programmatic integration.</li>
+<li><strong><code>summary.yml</code></strong>: YAML version.</li>
+</ul>
+<p>Additionally, <strong><code>bfxpm report</code></strong> automatically updates the <strong><code>README.md</code></strong> at the project root with the latest summary metrics, ensuring your project front-page always reflects the current data state.</p>
+<p><strong>Example format:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;generated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-10 15:30:10.000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;project_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;microbiome_2026&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;metrics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;num_fastqs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;num_bams&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;total_size_gb&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">450.20</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;directories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;data/raw&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;data/processed&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;scripts&quot;</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;recent_history&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-09&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Updated mapping logic.&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="cleaning-subsystem-output">Cleaning Subsystem Output<a class="headerlink" href="#cleaning-subsystem-output" title="Permanent link">&para;</a></h2>
+<p>BfxPM does not randomly throw away data. Calling <code>bfxpm clean archive folder_name</code> generates:</p>
+<ul>
+<li><strong>Where:</strong> <code>archive/folder_name/</code></li>
+<li><strong>What:</strong> It moves the old result folder away from active view, dropping it into the <code>archive</code> silo, protecting it from accidental script modifications while getting it out of your <code>tree</code> visualizations.</li>
+</ul>
+<h2 id="git-scaffolding-scientific-attribution">Git Scaffolding &amp; Scientific Attribution<a class="headerlink" href="#git-scaffolding-scientific-attribution" title="Permanent link">&para;</a></h2>
+<p>If you enable Git during <code>bfxpm init</code>, the following files are automatically generated and personalized based on your prompts:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">File</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>LICENSE</code></td>
+<td style="text-align: left;">An MIT License file updated with the current <strong>Year</strong> and your <strong>Full Name</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CITATION.cff</code></td>
+<td style="text-align: left;">A citation metadata file containing your <strong>Given/Family names</strong>, <strong>ORCID ID</strong>, <strong>Project Title</strong>, and <strong>Release Date</strong>. This allows others to cite your work easily.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CONTRIBUTING.md</code></td>
+<td style="text-align: left;">Standard guidelines for external contributors.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CODE_OF_CONDUCT.md</code></td>
+<td style="text-align: left;">Standard community behavior guidelines.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SECURITY.md</code></td>
+<td style="text-align: left;">Policy for reporting vulnerabilities.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SUPPORT.md</code></td>
+<td style="text-align: left;">Instructions on how to get help with the project.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.github/</code></td>
+<td style="text-align: left;">Contains specialized sub-directories for <code>ISSUE_TEMPLATE</code> and <code>workflows</code> (CI and Versioning).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.gitignore</code></td>
+<td style="text-align: left;">Configured to ignore large data, results, and intermediate folders by default to keep your repo lean.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bfxpm-init"><code>bfxpm init</code><a class="headerlink" href="#bfxpm-init" title="Permanent link">&para;</a></h2>
+<details class="initialization" open="open">
+<summary>Initialization</summary>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bfxpm<span class="w"> </span>init
+<span class="c1">#=================================================#</span>
+<span class="c1">#   BfxPM: Bioinformatician&#39;s Project Manager         #</span>
+<span class="c1">#=================================================#</span>
+Purpose:<span class="w"> </span>Project<span class="w"> </span>Manager<span class="w"> </span>tool<span class="w"> </span><span class="k">for</span><span class="w"> </span>Bioinformaticians
+Developer:<span class="w"> </span>Jyotirmoy<span class="w"> </span>Das
+Maintainer:<span class="w"> </span>Jyotirmoy<span class="w"> </span>Das
+Version:<span class="w"> </span><span class="m">0</span>.1.0
+
+Enter<span class="w"> </span>your<span class="w"> </span>full<span class="w"> </span>name<span class="w"> </span><span class="o">(</span>First<span class="w"> </span>and<span class="w"> </span>Last<span class="w"> </span>Name<span class="o">)</span>:<span class="w"> </span>Jyotirmoy<span class="w"> </span>Das
+Enter<span class="w"> </span>the<span class="w"> </span>project<span class="w"> </span>directory<span class="w"> </span>name:<span class="w"> </span>test007
+Created<span class="w"> </span>main<span class="w"> </span>directory:<span class="w"> </span>/Documents/bfxpm/test007
+Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>initialize<span class="w"> </span>a<span class="w"> </span>Git<span class="w"> </span>repository<span class="w"> </span><span class="k">for</span><span class="w"> </span>this<span class="w"> </span>project?<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span>:<span class="w"> </span>y
+Enter<span class="w"> </span>your<span class="w"> </span>GitHub<span class="w"> </span>username<span class="w"> </span><span class="o">(</span>e.g.<span class="w"> </span>JD2112<span class="o">)</span>:<span class="w"> </span>JD2112
+Enter<span class="w"> </span>your<span class="w"> </span>ORCID<span class="w"> </span>ID<span class="w"> </span><span class="o">(</span>e.g.<span class="w"> </span><span class="m">0000</span>-0000-0000-0000<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">0000</span>-0000-0000-0000<span class="o">]</span>:<span class="w"> </span>
+Git<span class="w"> </span>repository<span class="w"> </span>initialized<span class="w"> </span><span class="k">in</span><span class="w"> </span>.
+✔<span class="w"> </span>Setup<span class="w"> </span>successful,<span class="w"> </span>template<span class="w"> </span>files<span class="w"> </span>copied<span class="w"> </span>from<span class="w"> </span>git-essentials.
+Run<span class="w"> </span>bfxpm<span class="w"> </span>scan<span class="w"> </span>to<span class="w"> </span>view<span class="w"> </span>your<span class="w"> </span>files,<span class="w"> </span><span class="k">then</span><span class="w"> </span>bfxpm<span class="w"> </span>organize<span class="w"> </span>to<span class="w"> </span>sort<span class="w"> </span>them<span class="w"> </span>into<span class="w"> </span>test007.
+</code></pre></div>
+</details>
+<h2 id="bfxpm-scan"><code>bfxpm scan</code><a class="headerlink" href="#bfxpm-scan" title="Permanent link">&para;</a></h2>
+<details class="scan" open="open">
+<summary>Scan</summary>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bfxpm<span class="w"> </span>scan
+File<span class="w"> </span>Extension<span class="w"> </span>Scanner:<span class="w"> </span>test007<span class="w">   </span>
+┏━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━┓
+┃<span class="w"> </span>Extension<span class="w">    </span>┃<span class="w"> </span>Count<span class="w"> </span>┃<span class="w"> </span>Size<span class="w"> </span><span class="o">(</span>MB<span class="o">)</span><span class="w"> </span>┃
+┡━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━┩
+│<span class="w"> </span>.md<span class="w">          </span>│<span class="w">     </span><span class="m">9</span><span class="w"> </span>│<span class="w">      </span><span class="m">0</span>.03<span class="w"> </span>│
+│<span class="w"> </span>.yml<span class="w">         </span>│<span class="w">     </span><span class="m">4</span><span class="w"> </span>│<span class="w">      </span><span class="m">0</span>.00<span class="w"> </span>│
+│<span class="w"> </span>no_extension<span class="w"> </span>│<span class="w">     </span><span class="m">3</span><span class="w"> </span>│<span class="w">      </span><span class="m">0</span>.00<span class="w"> </span>│
+│<span class="w"> </span>.cff<span class="w">         </span>│<span class="w">     </span><span class="m">1</span><span class="w"> </span>│<span class="w">      </span><span class="m">0</span>.00<span class="w"> </span>│
+│<span class="w"> </span>.qmd<span class="w">         </span>│<span class="w">     </span><span class="m">1</span><span class="w"> </span>│<span class="w">      </span><span class="m">0</span>.00<span class="w"> </span>│
+└──────────────┴───────┴───────────┘
+</code></pre></div>
+</details>
+<h2 id="bfxpm-tree"><code>bfxpm tree</code><a class="headerlink" href="#bfxpm-tree" title="Permanent link">&para;</a></h2>
+<details class="folder_structure" open="open">
+<summary>Folder_structure</summary>
+<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>test007
+$<span class="w"> </span>bfxpm<span class="w"> </span>tree<span class="w"> </span>-a
+
+test007/
+┣━━<span class="w"> </span>.bfxpm/
+┣━━<span class="w"> </span>.git/
+┃<span class="w">   </span>┣━━<span class="w"> </span>hooks/
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>applypatch-msg.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>commit-msg.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>fsmonitor-watchman.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>post-update.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>pre-applypatch.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>pre-commit.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>pre-merge-commit.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>pre-push.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>pre-rebase.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>pre-receive.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>prepare-commit-msg.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>push-to-checkout.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>sendemail-validate.sample
+┃<span class="w">   </span>┃<span class="w">   </span>┗━━<span class="w"> </span>update.sample
+┃<span class="w">   </span>┣━━<span class="w"> </span>info/
+┃<span class="w">   </span>┃<span class="w">   </span>┗━━<span class="w"> </span>exclude
+┃<span class="w">   </span>┣━━<span class="w"> </span>objects/
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>info/
+┃<span class="w">   </span>┃<span class="w">   </span>┗━━<span class="w"> </span>pack/
+┃<span class="w">   </span>┣━━<span class="w"> </span>refs/
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>heads/
+┃<span class="w">   </span>┃<span class="w">   </span>┗━━<span class="w"> </span>tags/
+┃<span class="w">   </span>┣━━<span class="w"> </span>config
+┃<span class="w">   </span>┣━━<span class="w"> </span>description
+┃<span class="w">   </span>┗━━<span class="w"> </span>HEAD
+┣━━<span class="w"> </span>.github/
+┃<span class="w">   </span>┣━━<span class="w"> </span>ISSUE_TEMPLATE/
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>bug_report.md
+┃<span class="w">   </span>┃<span class="w">   </span>┣━━<span class="w"> </span>custom.md
+┃<span class="w">   </span>┃<span class="w">   </span>┗━━<span class="w"> </span>feature_request.md
+┃<span class="w">   </span>┗━━<span class="w"> </span>workflows/
+┃<span class="w">       </span>┣━━<span class="w"> </span>docker-build.yml
+┃<span class="w">       </span>┣━━<span class="w"> </span>github-pages-deployment.yml
+┃<span class="w">       </span>┗━━<span class="w"> </span>shinyapps_deploy.yml
+┣━━<span class="w"> </span>scripts/
+┃<span class="w">   </span>┣━━<span class="w"> </span>docker/
+┃<span class="w">   </span>┣━━<span class="w"> </span>nextflow/
+┃<span class="w">   </span>┗━━<span class="w"> </span>snakemake/
+┣━━<span class="w"> </span>data/
+┃<span class="w">   </span>┣━━<span class="w"> </span>meta/
+┃<span class="w">   </span>┣━━<span class="w"> </span>raw_external/
+┃<span class="w">   </span>┗━━<span class="w"> </span>raw_internal/
+┣━━<span class="w"> </span>doc/
+┣━━<span class="w"> </span>intermediate/
+┣━━<span class="w"> </span>logs/
+┃<span class="w">   </span>┗━━<span class="w"> </span>logs.qmd
+┣━━<span class="w"> </span>notebooks/
+┣━━<span class="w"> </span>results/
+┃<span class="w">   </span>┣━━<span class="w"> </span>figures/
+┃<span class="w">   </span>┣━━<span class="w"> </span>reports/
+┃<span class="w">   </span>┗━━<span class="w"> </span>tables/
+┣━━<span class="w"> </span>scratch/
+┣━━<span class="w"> </span>.gitattributes
+┣━━<span class="w"> </span>.gitignore
+┣━━<span class="w"> </span>CITATION.cff
+┣━━<span class="w"> </span>CODE_OF_CONDUCT.md
+┣━━<span class="w"> </span>CODEOWNERS.md
+┣━━<span class="w"> </span>CONTRIBUTING.md
+┣━━<span class="w"> </span>LICENSE
+┣━━<span class="w"> </span>project.yml
+┣━━<span class="w"> </span>README.md
+┣━━<span class="w"> </span>SECURITY.md
+┗━━<span class="w"> </span>SUPPORT.md
+</code></pre></div>
+use <code>:q</code> to quit the viewer.</p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+  <div style="
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1.5em;
+    padding: 1em 2em;
+    border-top: 1px solid #000000;
+    color: #ffffff;
+    text-align: center;
+    background-color: #000000;
+  ">
+    <div style="flex: 1; text-align: left;">
+        © Jyotirmoy Das 2026 
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <code style="font-size: 0.8em;">
+        3D1F C87F 8D52 BFD4 5A1D <br> 3C86 63F2 2E14 6A0A 6B98
+      </code>
+    </div>
+    <div style="flex: 1; text-align: right;">
+      Made with <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" style="color: #ffffff;">MkDocs</a>
+    </div>
+  </div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.expand", "navigation.sections", "navigation.top", "content.code.annotate", "content.tabs.link", "navigation.tabs", "search.suggest", "search.highlight", "content.action.edit", "content.code.copy", "versioning", "icons"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Inter:wght@400;600&amp;display=swap"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../js/github-stats.js"></script>
+      
+    
+  </body>
+</html>
