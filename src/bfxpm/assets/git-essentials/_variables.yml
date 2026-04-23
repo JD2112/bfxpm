@@ -1,0 +1,10 @@
+orcid: 0000-0002-3948-3914
+
+github-url: "https://github.com/JD2112/habijabi_book"
+
+pgp:
+  key: pgp.jd.txt
+  fingerprint: 16B1 9284 E8D6 3E81 8E28<br /> C9DB 0AC8 8CB5 4BC8 FFF2
+   
+# generate fingerprint for website from https://www.grc.com/fingerprints.htm
+years: "2007–2024"

@@ -1,0 +1,238 @@
+# Author manifest for scripts
+
+## In VSCode:
+
+Open Command Palette: `Ctrl+Shift+P` → `Preferences: Configure User Snippets`
+Choose `New Global Snippets` file, e.g. `jyotirmoy-manifestation-snippets.code-snippets`
+
+Add this - 
+
+```{json}
+{
+"Manifestation + Author Block": {
+  "prefix": "authorblock",
+  "body": [
+    "# Author details",
+    "## Script name: $TM_FILENAME",
+    "## Purpose of the script: ",
+    "## Author(s): Jyotirmoy Das, Ph.D.",
+    "## Date Created: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+    "## Date Last Modified: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+    "## Copyright statement: GNU3 open license",
+    "## Contact information: jyotirmoy.das@liu.se",
+    "## Please cite:",
+    "## @article{}",
+    "## Notes:",
+    "## Please read the manual/tutorial file for the sample preparation of the analysis.",
+    "",
+    "$0"
+  ],
+  "description": "Insert manifestation + author block"
+}
+
+  }
+  
+```
+
+## Git Hook - Pre-commit: Add Block If Missing
+
+Here’s a Git pre-commit hook that adds your manifestation block to new .py, .sh, or .R files that don’t already have it:
+
+📁 Create: .git/hooks/pre-commit
+
+```{bash}
+#!/bin/bash
+
+MANIFEST=$(cat <<EOF
+# 🌟 Manifestation Block
+# Today I create with clarity and purpose.
+# This script is aligned with my highest intentions.
+# I trust the process and learn through the journey.
+
+EOF
+)
+
+for file in $(git diff --cached --name-only --diff-filter=AC | grep -E '\.(py|sh|R)$'); do
+  if ! grep -q "🌟 Manifestation Block" "$file"; then
+    echo "$MANIFEST$(cat "$file")" > "$file"
+    git add "$file"  # re-add updated file
+    echo "Manifestation block added to $file"
+  fi
+done
+
+```
+
+Make it executable `chmod +x .git/hooks/pre-commit`
+
+🔧 If you want it system-wide (for all your repos):
+You can use a global Git template directory:
+
+Step-by-step:
+
+# 1. Create a central template directory
+mkdir -p ~/.git-template/hooks
+
+# 2. Move your hook there
+cp your_repo/.git/hooks/pre-commit ~/.git-template/hooks/pre-commit
+chmod +x ~/.git-template/hooks/pre-commit
+
+# 3. Tell Git to use it globally
+git config --global init.templateDir '~/.git-template'
+Now every time you create a new repo, Git will copy this hook into .git/hooks/.
+
+✅ Bonus: Apply hook to existing repos
+You can manually copy the hook:
+
+cp ~/.git-template/hooks/pre-commit /your/old/repo/.git/hooks/pre-commit
+Or automate it across multiple repositories with a loop — I can help with that if needed.
+
+
+
+## In RStudio:
+RStudio Addin for Manifestation Block
+
+Since snippets are tricky in RStudio (especially multi-line), a custom R Addin is the best solution.
+
+🔧 Step-by-step Setup
+### ✅ A. Create a New R Package for Addins
+
+
+`usethis::create_package("~/jyotirmoymanifest")`
+
+Inside that folder, run:
+
+`usethis::use_r("insert_manifestation")`
+
+Paste this function:
+```{r}
+#| eval: false
+#| echo: true
+#| code-fold: true
+#| title: insertion of manifest
+#' Insert Manifestation Header
+#' @param filename Optional script name (default uses current file)
+#' @export
+insert_manifestation <- function(filename = NULL) {
+  if (!rstudioapi::hasFun("getActiveDocumentContext")) {
+    stop("This function requires RStudio.")
+  }
+
+  ctx <- rstudioapi::getActiveDocumentContext()
+
+  # If filename not provided, infer from the open document path
+  if (is.null(filename)) {
+    filename <- basename(ctx$path)
+    if (filename == "") filename <- "new_script.R"
+  }
+
+  date <- format(Sys.Date(), "%Y-%m-%d")
+
+  block <- c(
+    "# Author details",
+    paste0("## Script name: ", filename),
+    "## Purpose of the script: ",
+    "## Author(s): Jyotirmoy Das, Ph.D.",
+    paste("## Date Created:", date),
+    paste("## Date Last Modified:", date),
+    "## Copyright statement: GNU3 open license",
+    "## Contact information: jyotirmoy.das@liu.se",
+    "## Please cite:",
+    "## @article{}",
+    "## Notes:",
+    "## Please read the manual/tutorial file for the sample preparation of the analysis.",
+    ""
+  )
+
+  rstudioapi::insertText(paste(block, collapse = "\n"))
+}
+
+
+```
+
+### ✅ B. Register as an Addin
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-fold: true
+#| title: insertion of manifest dcf
+
+dir.create("inst/rstudio", recursive = TRUE)
+file.create("inst/rstudio/addins.dcf")
+
+```
+
+Add this to `inst/rstudio/addins.dcf`:
+
+```{text}
+Name: Insert Manifestation Header
+Description: Insert manifestation + author header at cursor position
+Binding: insert_manifestation
+Interactive: false
+```
+
+### ✅ C. Install Your Addin
+
+In the package root:
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-fold: true
+#| title: insertion of manifest install
+
+devtools::document()
+devtools::install()
+```
+
+### Restart Rstudio and add addin
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-fold: true
+#| title: insertion of manifest add
+
+## REMEMBER to add this at the top of the code file - <code-file>.R
+library(jyotirmoymanifest)
+insert_manifestation()
+
+#or
+jyotirmoymanifest::insert_manifestation()
+
+```
+
+::: {.callout-important title="Added in shortcut" collapse="false"}
+**And in RStudio:**
+
+- Check the `“Addins”` menu → `Insert Manifestation Header`
+- Or assign a shortcut via: `Tools` → `Modify Keyboard Shortcuts`
+
+1. Added to - `ctrl+shift+A` [**Nautilus**]
+
+**Update the package -**
+```{r}
+#| eval: false
+#| echo: true
+#| code-fold: true
+#| title: update package
+setwd("~/jyotirmoymanifest")
+devtools::document()
+devtools::install()
+```
+
+To register the license properly, you can run:
+
+usethis::use_gpl3_license("Jyotirmoy Das")
+Or switch to MIT if you want more permissive usage:
+
+usethis::use_mit_license("Jyotirmoy Das")
+This will also generate a LICENSE file.
+
+
+::: {.callout-warning title="tag versions"}
+git tag -a v0.1.0 -m "Initial release of manifestation addin"
+git push origin v0.1.0
+
+:::
+

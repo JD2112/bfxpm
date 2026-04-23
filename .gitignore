@@ -1,0 +1,35 @@
+# BfxPM Local Data, Cache, and Unnecessary Files
+.bfxpm/
+.pytest_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.pyc
+
+# OS Files
+*.DS_Store
+
+# Development Artifacts (not part of the public package)
+conversations.md
+instructions.md
+implementation_plan*.md
+task*.md
+walkthrough*.md
+bfxpm_comparison.md
+project-init.sh
+biopm_structure_map_*.json
+project_tracker.yaml
+
+# Personal/Sensitive Files in Assets
+src/bfxpm/assets/git-essentials/pgp.jd.txt
+src/bfxpm/assets/git-essentials/my_github_repos.*
+src/bfxpm/assets/git-essentials/fetch_repos.py
+src/bfxpm/assets/git-essentials/git_repo_migration.sh
+src/bfxpm/assets/git-essentials/git_auto_migrate_releases.sh
+src/bfxpm/assets/git-essentials/migrate_all_releases.sh
+src/bfxpm/assets/git-essentials/dnam.puml
+src/bfxpm/assets/git-essentials/Docker’s multi-architecture support is b.md
+src/bfxpm/assets/git-essentials/index.html
+src/bfxpm/assets/git-essentials/update_repo_mike*.sh

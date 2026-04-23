@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "[FAMILY_NAME]"
+    given-names: "[GIVEN_NAME]"
+    orcid: https://orcid.org/0000-0000-0000-0000
+title: "[PROJECT_NAME]"
+version: 0.1.0
+identifiers:
+  - type: doi
+    value: 00.0000/zenodo.0000000
+date-released: "[DATE]"

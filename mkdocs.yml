@@ -1,0 +1,83 @@
+site_name: BfxPM (Bioinformatician's Project Manager)
+site_description: An active CLI manager for bioinformatics project scaffolding, file routing, cleaning, and reporting.
+site_author: Jyotirmoy Das
+repo_url: https://github.com/JD2112/bioinformatics_project_manager
+edit_uri: ""
+
+theme:
+  name: material
+  logo: assets/bfxpm_logo.png
+  custom_dir: docs/overrides
+  palette:
+    primary: blue grey
+    accent: blue
+  font:
+    text: Inter
+    code: Fira Code
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.expand
+    - navigation.sections
+    - navigation.top
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.tabs
+    - search.suggest
+    - search.highlight
+    # - toc.integrate
+    - content.action.edit
+    - content.code.copy
+    - versioning
+    - icons
+
+plugins:
+  - search
+
+nav:
+  - Introduction: index.md
+  - Usage: usage.md
+  - AI Agent: ai_agent.md
+  - Parameters: parameters.md
+  - Directory Structure: output.md
+  - For Developers: developers.md
+  - References: references.md
+
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji
+  - pymdownx.extra
+  - pymdownx.blocks.html
+  - pymdownx.arithmatex:
+      generic: true
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra:
+  version:
+    provider: mike
+  current_year: !!python/object/apply:str ["2026"]
+
+extra_css:
+  - styles/extra.css
+
+extra_javascript:
+  - https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;600&display=swap
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML
+  - js/github-stats.js

@@ -1,0 +1,22 @@
+services:
+  php:
+    build:
+      context: .  # Path to Dockerfile
+    ports:
+      - "8080:80"  # Map localhost:8080 to the container's port 80
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: app_database
+    ports:
+      - "3006:3006"  # Map MySQL port
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  db_data:  # Persistent storage for MySQL

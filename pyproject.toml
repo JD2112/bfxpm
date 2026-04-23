@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bfxpm"
+version = "1.0.0"
+authors = [
+  { name="Jyotirmoy Das", email="jyotirmoy.das@example.com" },
+]
+description = "BfxPM: Bioinformatician's Project Manager for reproducible workflows."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Environment :: Console",
+]
+dependencies = [
+    "typer[all]>=0.9.0",
+    "rich>=13.0.0",
+    "pyyaml>=6.0.0",
+    "GitPython>=3.1.0",
+    "google-genai>=0.1.0",
+    "smolagents>=1.0.0",
+    "ollama>=0.1.0",
+    "python-dotenv>=1.0.0",
+    "mkdocs-material>=9.5.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+"Homepage" = "https://github.com/JD2112/bfxpm"
+"Bug Tracker" = "https://github.com/JD2112/bfxpm/issues"
+"Documentation" = "https://JD2112.github.io/bfxpm/"
+
+[project.scripts]
+bfxpm = "bfxpm.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["bfxpm*"]
+
+[tool.setuptools.package-data]
+"bfxpm" = ["assets/**/*"]

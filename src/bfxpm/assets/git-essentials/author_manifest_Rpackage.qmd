@@ -1,0 +1,204 @@
+# Author manifest for scripts
+
+## 🧱 PART 1: Build Your R Package
+
+### ✅ Create the Package Structure
+In RStudio:
+
+`usethis::create_package("~/.manifestaddin")`
+
+This creates a proper R package structure with:
+```
+DESCRIPTION
+NAMESPACE
+R/
+.Rproj
+```
+
+## ✍ PART 2: Add the Manifestation Function (Core)
+
+`R/insert_manifestation.R`
+
+```r
+#' Insert Manifestation Header
+#' 
+#' @param script_name Optional script name
+#' @param purpose Script purpose
+#' @param author Author name
+#' @param email Contact email
+#' @param citation Citation info
+#' @param notes Notes
+#' @param save_profile Save defaults to ~/.manifest_profile.R
+#' @export
+insert_manifestation <- function(
+  script_name = NULL,
+  purpose = NULL,
+  author = NULL,
+  email = NULL,
+  citation = NULL,
+  notes = NULL,
+  save_profile = FALSE
+) {
+  if (!rstudioapi::hasFun("insertText")) stop("Requires RStudio.")
+  
+  profile_path <- path.expand("~/.manifest_profile.R")
+  if (file.exists(profile_path)) source(profile_path, local = TRUE)
+
+  get_default <- function(key, fallback = NULL) {
+    if (exists("manifest_profile") && key %in% names(manifest_profile)) {
+      manifest_profile[[key]]
+    } else fallback
+  }
+
+  ctx <- rstudioapi::getActiveDocumentContext()
+  if (is.null(script_name)) {
+    script_name <- if (nzchar(ctx$path)) basename(ctx$path) else "your_script.R"
+  }
+
+  purpose <- purpose   %||% rstudioapi::showPrompt("Purpose", "What does this script do?")
+  author  <- author    %||% get_default("author")   %||% rstudioapi::showPrompt("Author", "Name:")
+  email   <- email     %||% get_default("email")    %||% rstudioapi::showPrompt("Email", "Contact:")
+  citation <- citation %||% get_default("citation") %||% rstudioapi::showPrompt("Citation", "How to cite:")
+  notes    <- notes    %||% rstudioapi::showPrompt("Notes", "Notes/Instructions:")
+
+  date <- format(Sys.Date(), "%Y-%m-%d")
+
+  block <- c(
+    "# 🌟 Manifestation Block",
+    "# Today I create with clarity and purpose.",
+    "# This script is aligned with my highest intentions.",
+    "# I trust the process and learn through the journey.",
+    "",
+    "# Author details",
+    paste0("## Script name: ", script_name),
+    paste0("## Purpose of the script: ", purpose),
+    paste0("## Author(s): ", author),
+    paste0("## Date Created: ", date),
+    paste0("## Date Last Modified: ", date),
+    paste0("## Copyright statement: ",
+            get_default("copyright", "All rights reserved")),
+    paste0("## Contact information: ", email),
+    paste0("## Please cite: ", citation),
+    paste0("## Notes: ", notes),
+    ""
+  )
+
+  rstudioapi::insertText(paste(block, collapse = "\n"))
+
+  if (isTRUE(save_profile)) {
+    manifest_profile <- list(
+      author = author,
+      email = email,
+      citation = citation,
+      copyright = get_default("copyright")
+    )
+    dput(manifest_profile, file = profile_path)
+    message("✔ Manifestation profile saved to ~/.manifest_profile.R")
+  }
+}
+
+# fallback operator
+`%||%` <- function(a, b) if (!is.null(a)) a else b
+```
+
+## 🧠 PART 3: Enable as RStudio Addin
+
+`inst/rstudio/addins.dcf`
+
+```
+Name: Insert Manifestation Header
+Description: Insert a manifestation and author block into the script
+Binding: insert_manifestation
+Interactive: false
+```
+
+## 📝 PART 4: DESCRIPTION File
+
+```r
+Package: jyotirmoymanifest
+Title: Insert Manifestation and Author Blocks in R Scripts
+Version: 0.1.0
+Authors@R: 
+    person("Jyotirmoy", "Das", email = "jyotirmoy.das@liu.se", 
+           role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-XXXX-XXXX"))
+Description: 
+    Provides an RStudio Addin and function to insert a customizable "manifestation block" 
+    and author metadata into R scripts.
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 3.5.0)
+Imports: 
+    rstudioapi
+```
+
+## 📰 PART 5: NEWS.md (Changelog)
+
+```{markdown}
+# jyotirmoymanifest News
+
+## v0.1.0 - 2024-06-24 🎉
+
+- Initial release of `insert_manifestation()` RStudio Addin
+- Supports interactive prompts for author info and citation
+- Auto-loads user defaults from `~/.manifest_profile.R`
+- Saves user profile if requested
+```
+
+## 🧪 PART 6: Build, Document, Install
+```r
+devtools::document()
+devtools::install()
+```
+
+## 🚀 PART 7: Push to GitHub
+
+### A. Initialize Git and link:
+```r
+usethis::use_git()
+usethis::use_github()
+```
+
+### B. Tag a release (optional):
+```r
+git tag -a v0.1.0 -m "Initial public release"
+git push origin v0.1.0
+```
+
+## 📦 PART 8: Install the Package Anywhere
+
+`remotes::install_github("JD2112/jyotirmoymanifest")`
+
+
+## 🌐 PART 9: Create ~/.manifest_profile.R for User Defaults
+```r
+manifest_profile <- list(
+  author = "Jyotirmoy Das, Ph.D.",
+  email = "jyotirmoy.das@liu.se",
+  citation = "@article{...}",
+  copyright = "GNU"
+)
+```
+
+## 📘 PART 10: README.md Example
+```{markdown}
+# jyotirmoymanifest
+
+[![License: GPL-3](https://img.shields.io/badge/License-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+```
+
+## 🚀 Installation
+
+`remotes::install_github("JD2112/jyotirmoymanifest")`
+
+## 🧘 Usage
+```r
+library(jyotirmoymanifest)
+insert_manifestation()
+
+#local check package
+devtools::check()
+```

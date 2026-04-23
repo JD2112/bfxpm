@@ -1,0 +1,265 @@
+project:
+  type: book
+  output-dir: docs
+
+execute:
+  cache: true
+
+book:
+  title: "Habijabi Book"
+  subtitle: "Whatever comes in mind!"  
+  reader-mode: true
+  sharing: [twitter, facebook]
+  page-navigation: true
+  google-analytics: G-YG7LGLQWW9
+  navbar: 
+    search: true
+    logo: img/cover.png
+    right: 
+      - icon: github
+        href: https://github.com/JD2112/habijabi_book
+      - icon: twitter
+        href: https://twitter.com/jyotirmoy21
+  page-footer: 
+    left: |      
+      <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Jyotirmoy Das. All Rights Reserved.</p>
+      <p>[License](eula.qmd){.external target="_blank"} | [About](about.qmd){.external target="_blank"} </p>
+    right: |
+      <span class="faux-block">Made with [Quarto](https://quarto.org/)</span>
+      <span class="faux-block">[View the source at {{< iconify mdi github >}} GitHub]({{< var github-url >}})</span>
+    center: |
+      <span class="faux-block">{{< iconify mdi key >}} [PGP public key]({{< var pgp.key >}}) &emsp; {{< iconify bi fingerprint >}} Fingerprint:</strong><br><span class="fingerprint">{{< var pgp.fingerprint >}}</span></span>
+  downloads: [pdf, epub]
+  sidebar: 
+    style: floating
+    collapse-level: 1
+    search: true
+    footer: <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Jyotirmoy Das. All Rights Reserved.</p>
+
+  chapters:
+    - index.qmd
+    - preface.qmd
+    - extras/intro.qmd
+    - extras/mysite.qmd
+    # - extras/test-groovy.qmd
+    - part: books/books.qmd
+      chapters: 
+        - books/bengali_books.qmd
+        - books/bengali_books1.qmd
+        - books/more_books.qmd
+        - books/chotoder_chora.qmd
+        - books/chhorar_itithaas.qmd
+        - books/comics.qmd
+        - books/short_stories.qmd
+        - books/tukro_golpo.qmd
+        - books/bengali_detective.qmd
+    - part: cooking/cooking.qmd
+      chapters:
+        - cooking/bengali_receipes.qmd
+        - cooking/my_cooking.qmd
+    - part: bengali_food/bengali_food.qmd
+      chapters:
+        - bengali_food/street_food.qmd
+        - bengali_food/sweets.qmd
+        - bengali_food/food.qmd
+    - part: evolution/evolution.qmd
+      chapters: 
+        - evolution/universe1.qmd
+        - evolution/universe2.qmd
+        - evolution/universe3.qmd
+        - evolution/universe4.qmd
+    - part: civilization/civilization.qmd
+      chapters: 
+        - civilization/asia.qmd
+        - civilization/africa.qmd
+        - civilization/europe.qmd
+        - civilization/america.qmd
+        - civilization/incan_civilization.qmd
+        - civilization/aztec_civilization.qmd
+        - civilization/roman_civilization.qmd
+        - civilization/persian_civilization.qmd
+        - civilization/greek_civilization.qmd
+        - civilization/chinese_civilization.qmd
+        - civilization/jihau_civilization.qmd
+        - civilization/maya_civilization.qmd
+        - civilization/ain_ghazal_civilization.qmd
+        - civilization/egyptian_civilization.qmd
+        - civilization/indus_civilization.qmd
+        - civilization/mesopotamian_civilization.qmd
+        - civilization/norte_chico_civilization.qmd
+        - civilization/catalhöyük_civilization.qmd
+        - civilization/aboriginal_australians.qmd
+    - part: travels/travels.qmd
+      chapters: 
+        - travels/travels1.qmd
+    - part: collection/collect.qmd
+      chapters: 
+        - collection/philately.qmd
+        - collection/philately_glossary.qmd
+        - collection/photography.qmd
+        - collection/mybooks.qmd
+        - collection/mypens.qmd
+        - collection/mypens_glossary.qmd
+        - collection/paintings.qmd
+    - part: games/games.qmd
+      chapters: 
+        - games/board_games.qmd
+    - part: adults/adultsonly.qmd
+      chapters: 
+        - adults/adult_content.qmd
+        - adults/alcohol.qmd
+        - adults/indian_models.qmd
+    - part: epics/epics.qmd
+      chapters: 
+        - epics/puranas.qmd
+        - epics/evolution_vedic.qmd
+        - epics/mahabharata.qmd
+    - part: habijabi/habijabi.qmd
+      chapters: 
+        - habijabi/symbols.qmd
+        - habijabi/habijabi2.qmd
+        - habijabi/habijabi1.qmd
+        - habijabi/indian_calc.qmd
+    - part: wb/westbengal.qmd
+      chapters: 
+        - wb/wb-location.qmd
+        - wb/wb-rivers.qmd
+        - wb/wb-districts.qmd
+        - wb/wb-climate.qmd
+        - wb/wb-topography.qmd
+        - wb/wb-soil.qmd
+        - wb/wb-rain.qmd
+        - wb/wb-forest.qmd
+    - part: bd/bangladesh.qmd
+      chapters: 
+        - bd/bd-birds.qmd
+        - bd/bd-rivers.qmd
+        - bd/bd-fruits.qmd
+        - bd/bd-mammals.qmd
+        - bd/bd-reptiles.qmd
+        - bd/bd-medplants.qmd
+        - bd/bd-fishes.qmd
+        - bd/bd-butterflies.qmd
+    - part: wl/mywishlist.qmd
+      chapters: 
+        - wl/holidays.qmd
+        - wl/gears.qmd
+    - part: MyHistory/mystory.qmd
+      chapters: 
+        - MyHistory/mystory2.qmd
+        - MyHistory/myself.qmd
+        - MyHistory/thehouse.qmd
+        - MyHistory/myfather.qmd
+        - MyHistory/mymother.qmd
+        - MyHistory/firstyear.qmd
+        - MyHistory/bajekotha.qmd
+        - MyHistory/handwrittenkotha.qmd
+
+filters:
+  - section-bibliographies
+bibliography: references.bib
+reference-section-title: References
+citeproc: false
+
+format:
+  html:
+    theme:
+      - theme.scss
+    css: custom.css
+    mainfont: Caslon
+    toc: true
+    toc-depth: 3
+    toc-title: Contents
+    number-sections: true
+    page-layout: full 
+    cookie-consent: 
+      type: express
+      style: headline
+      palette: dark
+    crossref:
+      appendix-title: "App."
+      appendix-delim: ":"
+    lightbox:
+      match: auto
+      effect: fade
+      desc-position: right
+      loop: false
+  pdf:
+    # documentclass: article
+    documentclass: scrreprt
+    pdf-engine: xelatex
+    pdf-engine-opts: 
+      - '--no-shell-escape'
+      - '--halt-on-error'
+    include-in-header: 
+      text: |
+        \usepackage{makeidx}
+        \makeindex
+        \usepackage{fontspec}
+    include-after-body: 
+      text: |
+        \printindex
+    thanks: "acknowledgement to open-sources"
+    number-sections: true
+    geometry:
+      - top=30mm
+      - left=20mm
+      - heightrounded
+    code-line-numbers: true
+    #fontfamily: Caslon
+    #format: PrettyPDF-pdf
+    header-includes:
+      - \usepackage{xcolor}
+      - \usepackage{geometry}
+      - \usepackage{hyperref}
+      - \usepackage{fancyhdr}
+      - \usepackage{graphicx}
+      - \pagestyle{fancy}
+      - \usepackage[export]{adjustbox}
+      - \usepackage{makecell}
+      - \geometry{
+          a4paper,
+          left=20mm,
+          right=20mm,
+          headheight=4cm,
+          top=3.5cm,
+          bottom=4cm,
+          footskip=1cm
+          }
+      - \renewcommand{\headrulewidth}{0pt}
+      # - \fancyhead[C]{Service Request Number \\ \textcolor{cyan}{CFFMHS-CS-2685}}
+      # - \fancyhead[L]{\includegraphics[height=8mm]{img/core-facility-logo}}
+      # - \fancyhead[R]{\LARGE{Bioinformatics Unit}}
+      # - \fancyfoot[L]{\begin{tabular}
+      #       {@{}c@{}}
+      #       \scriptsize {\makecell[l]{\textbf{Contact information} }}
+      #       \end{tabular}}
+      # - \fancyfoot[R]{\includegraphics[height=10mm]{img/Logo-linkoping-uni} \\ \thepage}
+      # - \cfoot{}
+      # - \fancyfoot[C]{\begin{tabular}
+      #       {@{}c@{}}
+      #       \scriptsize {\makecell[c]{ }}
+      #   \end{tabular}}
+      - \usepackage{background}
+      - \usepackage{fvextra}
+      # - \usepackage[bangla, provide=*]{babel}
+      # - \babelfont{rm}[Renderer=Harfbuzz]{FreeSerif}
+      # - \usepackage[banglamainfont=Kalpurush, 
+      #       banglattfont=Siyam Rupali
+      #      ]{latexbangla}
+      # - \usepackage{polyglossia}
+      # - \setmainlanguage[variant=british]{english}
+      # - \setotherlanguage{bengali}
+      # - \newfontfamily\bengalifont{Noto Sans Bengali}[Script=Bengali]
+      - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+  # epub: 
+  #   cover-image: img/cover.png
+  #   toc: true
+  #   toc-depth: 3
+  #   number-sections: true
+  #   code-fold: true
+  #   code-copy: false
+  #   code-overflow: wrap
+  #   code-line-numbers: true
+  #   creator: Jyotirmoy Das
+  #   subject: Habijabi
