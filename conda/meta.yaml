@@ -1,5 +1,5 @@
 {% set name = "bfxpm" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -35,7 +35,7 @@ about:
   home: https://github.com/JD2112/bfxpm
   license: MIT
   license_file: LICENSE
-  summary: 'BfxPM: Bioinformatician\'s Project Manager - Streamlining reproducibility and hygiene in computational biology.'
+  summary: "BfxPM: Bioinformatician's Project Manager - Streamlining reproducibility and hygiene in computational biology."
   dev_url: https://github.com/JD2112/bfxpm
 
 extra:
