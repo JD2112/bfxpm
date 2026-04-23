@@ -1,0 +1,1598 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An active CLI manager for bioinformatics project scaffolding, file routing, cleaning, and reporting.">
+      
+      
+        <meta name="author" content="Jyotirmoy Das">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../ai_agent/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Usage - BfxPM (Bioinformatician's Project Manager)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../styles/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usage-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="BfxPM (Bioinformatician&#39;s Project Manager)" class="md-header__button md-logo" aria-label="BfxPM (Bioinformatician's Project Manager)" data-md-component="logo">
+      
+
+<a href="https://github.com/JD2112" target="_blank" style="display:flex; align-items:center; text-decoration:none;">
+  <img src="../images/JD_logo.png" alt="Logo" style="height:24px; margin-right:8px;">
+</a>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BfxPM (Bioinformatician's Project Manager)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Usage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/JD2112/bioinformatics_project_manager" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Usage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ai_agent/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI Agent
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../parameters/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Parameters
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../output/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Directory Structure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../developers/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  For Developers
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BfxPM (Bioinformatician&#39;s Project Manager)" class="md-nav__button md-logo" aria-label="BfxPM (Bioinformatician's Project Manager)" data-md-component="logo">
+      
+
+<a href="https://github.com/JD2112" target="_blank" style="display:flex; align-items:center; text-decoration:none;">
+  <img src="../images/JD_logo.png" alt="Logo" style="height:24px; margin-right:8px;">
+</a>
+    </a>
+    BfxPM (Bioinformatician's Project Manager)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/JD2112/bioinformatics_project_manager" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+  
+  <li class="md-nav__item">
+    
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+  
+  <li class="md-nav__item">
+    
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-project-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Project Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-analytical-scaffolding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Analytical Scaffolding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Analytical Scaffolding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-scaffolding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Scaffolding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-acquisition-and-hygiene" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Acquisition and Hygiene
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Data Acquisition and Hygiene">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fetching-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fetching Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleaning-and-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleaning and Compression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restoring-documents-decompress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restoring Documents (Decompress)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-organization-and-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Organization and Visualization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Organization and Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-project-time-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Project "Time Machine"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-reporting-and-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Reporting and Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-data-integrity-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Data Integrity and Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-automated-flow-recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Automated Flow Recording
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Automated Flow Recording">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-terminal-scripts-to-a-file-bfxpm-run_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save terminal scripts to a file bfxpm run_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bfxpm-flow-bridge-the-gap-between-interactive-exploration-and-reproducible-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bfxpm flow: Bridge the gap between interactive exploration and reproducible scripts.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-project-portfolio-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Project Portfolio Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-data-deposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Data Deposition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-agentic-ai-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Agentic AI Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Help
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+  
+  <li class="md-nav__item">
+    
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+  
+  <li class="md-nav__item">
+    
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+  
+  <li class="md-nav__item">
+    
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Directory Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+  
+  <li class="md-nav__item">
+    
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+  
+  <li class="md-nav__item">
+    
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+    
+    
+    
+  </li>
+
+
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-project-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Project Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-analytical-scaffolding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Analytical Scaffolding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Analytical Scaffolding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-scaffolding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Scaffolding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-acquisition-and-hygiene" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Acquisition and Hygiene
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Data Acquisition and Hygiene">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fetching-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fetching Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleaning-and-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleaning and Compression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restoring-documents-decompress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restoring Documents (Decompress)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-organization-and-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Organization and Visualization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Organization and Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-project-time-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Project "Time Machine"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-reporting-and-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Reporting and Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-data-integrity-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Data Integrity and Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-automated-flow-recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Automated Flow Recording
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Automated Flow Recording">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-terminal-scripts-to-a-file-bfxpm-run_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save terminal scripts to a file bfxpm run_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bfxpm-flow-bridge-the-gap-between-interactive-exploration-and-reproducible-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bfxpm flow: Bridge the gap between interactive exploration and reproducible scripts.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-project-portfolio-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Project Portfolio Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-data-deposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Data Deposition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-agentic-ai-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Agentic AI Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Help
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+
+<h1 id="usage-guide">Usage Guide<a class="headerlink" href="#usage-guide" title="Permanent link">&para;</a></h1>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Python</strong>: Ensure you have Python 3.8 or higher installed.</li>
+<li><strong>Dependencies</strong>: The required libraries (<code>typer</code>, <code>rich</code>, <code>gitpython</code>, <code>pyyaml</code>) are managed via your package manager.</li>
+<li><strong>External Tools</strong>: For full functionality of <code>bfxpm fetch</code>, ensure specialized tools like the SRA Toolkit (<code>fastq-dump</code>) are in your system PATH.</li>
+</ol>
+<h2 id="detailed-workflow">Detailed Workflow<a class="headerlink" href="#detailed-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="1-project-initialization">1. Project Initialization<a class="headerlink" href="#1-project-initialization" title="Permanent link">&para;</a></h3>
+<p>The <code>bfxpm init</code> command is your first step. It sets up a standard, industry-compliant directory structure that separates raw data from code and results.</p>
+<div class="highlight"><pre><span></span><code>bfxpm<span class="w"> </span>init
+</code></pre></div>
+<p><strong>Key Steps during Init:</strong></p>
+<ul>
+<li><strong>Author Information</strong>: Used to populate <code>project.yml</code>, <code>LICENSE</code>, and <code>CITATION.cff</code>.</li>
+<li><strong>Git Initialization</strong>: If you opt for Git, BfxPM will scaffold a comprehensive repository including:<ul>
+<li><strong>Governance</strong>: <code>CONTRIBUTING.md</code>, <code>CODE_OF_CONDUCT.md</code>.</li>
+<li><strong>Visibility</strong>: <code>SECURITY.md</code>, <code>SUPPORT.md</code>.</li>
+<li><strong>Templates</strong>: GitHub Issue and Pull Request templates in <code>.github/</code>.</li>
+<li><strong>CI/CD</strong>: Boilerplate GitHub Actions for CI and Versioning.</li>
+</ul>
+</li>
+<li><strong>ORCID ID</strong>: If Git is enabled, BfxPM asks for your <em>ORCID ID</em> to ensure proper scientific attribution in your <code>CITATION.cff</code>.</li>
+</ul>
+<h3 id="2-analytical-scaffolding">2. Analytical Scaffolding<a class="headerlink" href="#2-analytical-scaffolding" title="Permanent link">&para;</a></h3>
+<p>BfxPM helps you transition from project setup to analysis by generating standard config and pipeline files.</p>
+<h4 id="environment-management">Environment Management<a class="headerlink" href="#environment-management" title="Permanent link">&para;</a></h4>
+<p>Use <code>bfxpm env</code> to manage reproducible computing environments.</p>
+<ul>
+<li><code>bfxpm env init</code>: Creates a standard Conda <code>environment.yml</code> with essential bioinfo channels (<code>bioconda</code>, <code>conda-forge</code>).</li>
+<li><code>bfxpm env docker</code>: Generates a <code>Dockerfile</code> optimized for bioinformatics data.</li>
+<li><code>bfxpm env singularity</code>: Generates a <code>Singularity.def</code> file for HPC compatibility.</li>
+</ul>
+<h4 id="pipeline-scaffolding">Pipeline Scaffolding<a class="headerlink" href="#pipeline-scaffolding" title="Permanent link">&para;</a></h4>
+<p>Quickly drop pipeline templates into your project.</p>
+<ul>
+<li><code>bfxpm pipeline snakemake</code>: Scaffold a <code>Snakefile</code> in <code>scripts/snakemake/</code>.</li>
+<li><code>bfxpm pipeline nextflow</code>: Scaffold a <code>main.nf</code> in <code>scripts/nextflow/</code>.</li>
+</ul>
+<h3 id="3-data-acquisition-and-hygiene">3. Data Acquisition and Hygiene<a class="headerlink" href="#3-data-acquisition-and-hygiene" title="Permanent link">&para;</a></h3>
+<p>BfxPM simplifies the messy process of downloading and managing large biological datasets.</p>
+<h4 id="fetching-data">Fetching Data<a class="headerlink" href="#fetching-data" title="Permanent link">&para;</a></h4>
+<p>Use <code>bfxpm fetch</code> to pull data directly into <code>data/raw_external/</code>.
+<div class="highlight"><pre><span></span><code>bfxpm<span class="w"> </span>fetch<span class="w"> </span>sra<span class="w"> </span>SRR123456
+</code></pre></div>
+BfxPM automatically checks for dependencies and routes the output to ensure your project root stays clean.</p>
+<h4 id="cleaning-and-compression">Cleaning and Compression<a class="headerlink" href="#cleaning-and-compression" title="Permanent link">&para;</a></h4>
+<p>Bioinformatics generates massive intermediate files. <code>bfxpm clean</code> helps you find and manage them.</p>
+<ul>
+<li><strong>Batch Compression</strong>: Identifies uncompressed biological formats (<code>.fastq</code>, <code>.fast5</code>, <code>.pod5</code>, <code>.hifi</code>) and applies standardized lossless compression.</li>
+<li><strong>Standard</strong>: Converts to <code>.tar.gz</code>.</li>
+<li><strong>Genomic</strong>: Leverages <code>samtools</code> to convert BAM to CRAM and <code>pod5-utils</code> to convert FAST5 to POD5.</li>
+<li><strong>Large Data Sync</strong>: While Git handles your code, <code>bfxpm sync --data</code> uses <code>rsync</code> to securely back up your massive <code>data/</code> directory to a cluster or remote server.</li>
+<li><strong>Archiving</strong>: Moves entire directories to <code>archive/</code> to keep your active project view focused.</li>
+</ul>
+<p>See the <a href="../references/">References</a> section for more details on these compression formats.</p>
+<details class="info" open="open">
+<summary>Compression Modes</summary>
+<p><code>bfxpm clean compress</code> features a smarter, type-aware processing engine:</p>
+<ul>
+<li><strong>Mode Awareness</strong>: You can run <code>bfxpm clean compress --mode genomic</code> to prioritize scientific formats, or keep it on <code>best</code> (default) to let BfxPM decide.</li>
+<li><strong>BAM to CRAM</strong>: If <code>samtools</code> is installed, BfxPM will offer to convert your heavy BAM files to <strong>CRAM</strong>, saving 30-50% disk space while remaining 100% lossless.</li>
+<li><strong>FAST5 to POD5</strong>: If <code>pod5-utils</code> is installed, it will offer to convert legacy Oxford Nanopore FAST5 files to the modern, more efficient <strong>POD5</strong> signal format.</li>
+<li><strong>Standard Fallback</strong>: For all other formats (FASTQ, HiFi), it continues to provide standard <code>.tar.gz</code> compression to keep your project root clean.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bfxpm<span class="w"> </span>clean<span class="w"> </span>--help
+
+Usage:<span class="w"> </span>bfxpm<span class="w"> </span>clean<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...<span class="w">                                                                                              </span>
+Manage<span class="w"> </span>and<span class="w"> </span>clean<span class="w"> </span>project<span class="w"> </span>disk<span class="w"> </span>space<span class="w">                                                                                                              </span>
+╭─<span class="w"> </span>Options<span class="w"> </span>────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--help<span class="w">          </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                                                                          </span>│
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─<span class="w"> </span>Commands<span class="w"> </span>───────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>temp<span class="w">        </span>Find<span class="w"> </span>and<span class="w"> </span>prompt<span class="w"> </span>to<span class="w"> </span>delete<span class="w"> </span>large<span class="w"> </span>or<span class="w"> </span>intermediate<span class="w"> </span>files<span class="w"> </span><span class="o">(</span>*.sam,<span class="w"> </span>*.tmp<span class="o">)</span>.<span class="w">                                    </span>│
+│<span class="w"> </span>compress<span class="w">    </span>Apply<span class="w"> </span>lossless<span class="w"> </span>compression<span class="w"> </span>to<span class="w"> </span>sequence<span class="w"> </span>and<span class="w"> </span>alignment<span class="w"> </span>files.<span class="w">                                              </span>│
+│<span class="w">             </span>Supports<span class="w"> </span>specialized<span class="w"> </span>formats<span class="w"> </span>like<span class="w"> </span>CRAM<span class="w"> </span><span class="o">(</span><span class="k">for</span><span class="w"> </span>BAM<span class="o">)</span><span class="w"> </span>and<span class="w"> </span>POD5<span class="w"> </span><span class="o">(</span><span class="k">for</span><span class="w"> </span>FAST5<span class="o">)</span>.<span class="w">                                   </span>│
+│<span class="w"> </span>archive<span class="w">     </span>Move<span class="w"> </span>an<span class="w"> </span>old<span class="w"> </span>folder<span class="w"> </span>into<span class="w"> </span>the<span class="w"> </span>project<span class="err">&#39;</span>s<span class="w"> </span>archive/<span class="w"> </span>directory.<span class="w">                                                </span>│
+│<span class="w"> </span>decompress<span class="w">  </span>Decompress<span class="w"> </span>and<span class="w"> </span>restore<span class="w"> </span>files<span class="w"> </span>from<span class="w"> </span>.tar.gz,<span class="w"> </span>CRAM,<span class="w"> </span>or<span class="w"> </span>POD5<span class="w"> </span>formats.<span class="w">                                        </span>│
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bfxpm<span class="w"> </span>clean<span class="w"> </span>compress<span class="w"> </span>--help
+
+Usage:<span class="w"> </span>bfxpm<span class="w"> </span>clean<span class="w"> </span>compress<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w">                                                                                                                                                                                                                      </span>
+Apply<span class="w"> </span>lossless<span class="w"> </span>compression<span class="w"> </span>to<span class="w"> </span>sequence<span class="w"> </span>and<span class="w"> </span>alignment<span class="w"> </span>files.<span class="w"> </span>Supports<span class="w"> </span>specialized<span class="w"> </span>formats<span class="w"> </span>like<span class="w"> </span>CRAM<span class="w"> </span><span class="o">(</span><span class="k">for</span><span class="w"> </span>BAM<span class="o">)</span><span class="w"> </span>and<span class="w"> </span>POD5<span class="w"> </span><span class="o">(</span><span class="k">for</span><span class="w"> </span>FAST5<span class="o">)</span>.<span class="w">  </span>
+
+╭─<span class="w"> </span>Options<span class="w"> </span>─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--mode<span class="w">  </span>-m<span class="w">      </span>TEXT<span class="w">  </span>Compression<span class="w"> </span>mode:<span class="w"> </span><span class="s1">&#39;standard&#39;</span><span class="w"> </span><span class="o">(</span>tar.gz<span class="o">)</span>,<span class="w"> </span><span class="s1">&#39;genomic&#39;</span><span class="w"> </span><span class="o">(</span>CRAM/POD5<span class="o">)</span>,<span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;best&#39;</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>best<span class="o">]</span><span class="w">                     </span>│
+│<span class="w"> </span>--keep<span class="w">                </span>Don<span class="err">&#39;</span>t<span class="w"> </span>delete<span class="w"> </span>original<span class="w"> </span>files<span class="w"> </span>after<span class="w"> </span>compression<span class="w">                                                               </span>│
+│<span class="w"> </span>--help<span class="w">                </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                                                                                 </span>│
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+</code></pre></div>
+</details>
+<h4 id="restoring-documents-decompress">Restoring Documents (Decompress)<a class="headerlink" href="#restoring-documents-decompress" title="Permanent link">&para;</a></h4>
+<p>If you need to access archived or compressed files, use <code>bfxpm clean decompress</code>.</p>
+<ul>
+<li><strong>Restoration</strong>: Automatically extracts <code>.tar.gz</code> and <code>.gz</code> files.</li>
+<li><strong>Genomic Reversion</strong>:</li>
+<li><strong>CRAM to BAM</strong>: Restores your alignment files for tools that don't support CRAM.</li>
+<li><strong>POD5 to FAST5</strong>: Converts signal data back to legacy FAST5 format for older basecallers.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>bfxpm<span class="w"> </span>clean<span class="w"> </span>decompress
+</code></pre></div>
+<h3 id="4-organization-and-visualization">4. Organization and Visualization<a class="headerlink" href="#4-organization-and-visualization" title="Permanent link">&para;</a></h3>
+<p>If your project gets messy, BfxPM's organization tools help you regain control.</p>
+<ul>
+<li><code>bfxpm map</code>: Take a JSON snapshot of your current file locations before making changes.</li>
+<li><code>bfxpm organize</code>: Iteratively route loose files to their designated BfxPM subfolders.</li>
+<li><code>bfxpm tree</code>: View a beautiful, color-coded structure of your project in the terminal.</li>
+</ul>
+<h4 id="the-project-time-machine">The Project "Time Machine"<a class="headerlink" href="#the-project-time-machine" title="Permanent link">&para;</a></h4>
+<p>BfxPM allows you to revert an organization attempt if you decide the previous layout was better.</p>
+<ol>
+<li><strong>Snapshot</strong>: Create a map <em>before</em> you organize: <code>bfxpm map</code>.</li>
+<li><strong>Rollback</strong>: To revert, provide the map file: use <code>-r</code> or <code>--rollback</code> flag followed by the map file name.
+    <div class="highlight"><pre><span></span><code>bfxpm<span class="w"> </span>map<span class="w"> </span>--rollback<span class="w"> </span>bfxpm_structure_map_YYYYMMDD.json
+</code></pre></div></li>
+<li>BfxPM will locate your files and move them back to their original relative paths.</li>
+</ol>
+<h3 id="5-reporting-and-metadata">5. Reporting and Metadata<a class="headerlink" href="#5-reporting-and-metadata" title="Permanent link">&para;</a></h3>
+<p>BfxPM automatically summarizes your project's status for publication or collaboration.
+<div class="highlight"><pre><span></span><code>bfxpm<span class="w"> </span>report
+</code></pre></div>
+This extracts your Git history, calculates file sizes, counts FASTQ samples, and generates a structured <code>PROJECT_SUMMARY.md</code>, <code>summary.json</code>, and <code>summary.yml</code>.</p>
+<h3 id="6-data-integrity-and-security">6. Data Integrity and Security<a class="headerlink" href="#6-data-integrity-and-security" title="Permanent link">&para;</a></h3>
+<p>Bioinformatics data is fragile. <strong>BfxPM</strong> helps ensure your scientific results aren't based on corrupted files.</p>
+<ul>
+<li><code>bfxpm checksum generate</code>: Creates a <code>checksums.md5</code> manifest for all files in <code>data/</code>.</li>
+<li><code>bfxpm checksum verify</code>: Scans your data and compares it against the manifest to detect truncation or bit-rot.</li>
+</ul>
+<h3 id="7-automated-flow-recording">7. Automated Flow Recording<a class="headerlink" href="#7-automated-flow-recording" title="Permanent link">&para;</a></h3>
+<h4 id="save-terminal-scripts-to-a-file-bfxpm-run_history">Save terminal scripts to a file <code>bfxpm run_history</code><a class="headerlink" href="#save-terminal-scripts-to-a-file-bfxpm-run_history" title="Permanent link">&para;</a></h4>
+<p>When you run the right command after some troubles, and forget to save them, <code>bfxpm run_history</code> can scan your shell history and save them to a file.</p>
+<details class="info" open="open">
+<summary>Run History</summary>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bfxpm<span class="w"> </span>run_history<span class="w"> </span>--help
+Usage:<span class="w"> </span>bfxpm<span class="w"> </span>run_history<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w">                                                                                                                                         </span>
+Extract<span class="w"> </span>complex<span class="w"> </span>bioinformatics<span class="w"> </span>commands<span class="w"> </span>from<span class="w"> </span>shell<span class="w"> </span>history.<span class="w">                                                                                                                                          </span>
+╭─<span class="w"> </span>Options<span class="w"> </span>───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--save<span class="w">    </span>--no-save<span class="w">      </span><span class="o">[</span>default:<span class="w"> </span>no-save<span class="o">]</span><span class="w">                                                                                                     </span>│
+│<span class="w"> </span>--help<span class="w">                   </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                                                                                            </span>│
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+</code></pre></div>
+</details>
+<h4 id="bfxpm-flow-bridge-the-gap-between-interactive-exploration-and-reproducible-scripts"><code>bfxpm flow</code>: Bridge the gap between interactive exploration and reproducible scripts.<a class="headerlink" href="#bfxpm-flow-bridge-the-gap-between-interactive-exploration-and-reproducible-scripts" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>- `bfxpm flow start`: Starts monitoring your terminal interactions.
+- `bfxpm flow stop`: Automatically filters your shell history and saves your commands into a clean, reproducible `.sh` script in `scripts/`.
+</code></pre></div>
+<details class="info" open="open">
+<summary>Flow Recording</summary>
+<p><code>bfxpm flow</code> and <code>bfxpm run_history</code> are designed to work in two completely different ways so that you're covered whether you planned ahead or not:</p>
+<ol>
+<li>
+<p><strong><code>bfxpm run_history</code> (The "Oops" Tool)</strong>:</p>
+<ul>
+<li><strong>No preparation needed.</strong> It works even if you never ran <code>flow</code>. </li>
+<li>It retrospectively scans your global shell history (e.g., the last 100 commands) and uses a filter to find complex bioinformatics calls (like <code>bwa</code>, <code>samtools</code>, <code>nextflow</code>) that you might have forgotten to document.</li>
+<li>It’s perfect for when you just finished a quick test and realized, "Wait, that command worked! How did I type it?"</li>
+</ul>
+</li>
+<li>
+<p><strong><code>bfxpm flow</code> (The "Pilot" Tool)</strong>:</p>
+<ul>
+<li><strong>Requires <code>flow start</code>.</strong> </li>
+<li>It is a precise, time-bound session recorder. It only captures the commands you ran <em>during</em> a specific mission.</li>
+<li>It's perfect for when you're starting a formal analysis and want a clean, dedicated script of your exact workflow from start to finish.</li>
+</ul>
+</li>
+</ol>
+<p><strong>In summary</strong>: You do <strong>not</strong> need to run <code>flow</code> for <code>run_history</code> to work. <code>run_history</code> is a general search tool for your past, while <code>flow</code> is a high-fidelity recorder for your present! </p>
+</details>
+<h3 id="9-project-portfolio-management">9. Project Portfolio Management<a class="headerlink" href="#9-project-portfolio-management" title="Permanent link">&para;</a></h3>
+<p>As you manage multiple research projects over time, BfxPM provides a way to index all your work into a unified portfolio.</p>
+<ul>
+<li><code>bfxpm projects</code>: Scans your current root (e.g., your <code>projects/</code> or <code>lab/</code> folder) and identifies all standardized BfxPM projects.</li>
+<li><strong>HTML Export</strong>: Use the <code>--html</code> flag to generate a professional <code>projects_index.html</code> file. This is a great way to maintain an interactive dashboard of your research progress, file counts, and activity dates.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>bfxpm<span class="w"> </span>projects<span class="w"> </span>--html
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bfxpm<span class="w"> </span>projects<span class="w"> </span>--help
+
+Usage:<span class="w"> </span>bfxpm<span class="w"> </span>projects<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>PATH<span class="o">]</span>
+
+Scan<span class="w"> </span>and<span class="w"> </span>list<span class="w"> </span>all<span class="w"> </span>BfxPM<span class="w"> </span>projects<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>given<span class="w"> </span>directory.
+
+╭─<span class="w"> </span>Arguments<span class="w"> </span>────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│<span class="w">   </span>path<span class="w">      </span><span class="o">[</span>PATH<span class="o">]</span><span class="w">  </span>Root<span class="w"> </span>directory<span class="w"> </span>to<span class="w"> </span>scan<span class="w"> </span><span class="k">for</span><span class="w"> </span>projects<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>.<span class="o">]</span><span class="w">                                                        </span>│
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─<span class="w"> </span>Options<span class="w"> </span>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--html<span class="w">                     </span>Generate<span class="w"> </span>an<span class="w"> </span>HTML<span class="w"> </span>summary<span class="w"> </span>of<span class="w"> </span>all<span class="w"> </span>projects<span class="w">                                                        </span>│
+│<span class="w"> </span>--help<span class="w">                     </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                                                                     </span>│
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+</code></pre></div>
+<h3 id="10-data-deposition">10. Data Deposition<a class="headerlink" href="#10-data-deposition" title="Permanent link">&para;</a></h3>
+<p>When you're ready to publish, BfxPM helps you prepare and deposit your data to public repositories.</p>
+<ul>
+<li><code>bfxpm deposit list</code>: View all supported repositories (Zenodo, FigShare, Dryad, Dataverse, etc.).</li>
+<li><code>bfxpm deposit prepare</code>: Create a clean ZIP bundle excluding <code>.git</code>, <code>.venv</code>, and temp files. Use <code>--include-data</code> / <code>--include-results</code> flags to control what's included.</li>
+<li><code>bfxpm deposit go zenodo</code>: Open the deposit page for a specific repository directly in your browser.</li>
+</ul>
+<details class="info" open="open">
+<summary>Data Deposit List</summary>
+<p>Supported Repositories:</p>
+<ul>
+<li><a href="https://zenodo.org/deposit">Zenodo</a> : Open repository for EU-funded research outputs from Horizon Europe, Euratom, and earlier Framework Programmes.</li>
+<li><a href="https://figshare.com/account/home">Figshare</a>: Figshare is a provider of repository infrastructure. Our solutions help organizations and researchers share, showcase and manage their outputs.</li>
+<li><a href="https://dataverse.org/">Dataverse</a>: The Dataverse Project is an open-source software for sharing, preserving, citing, exploring, and analyzing research data.</li>
+<li><a href="https://datadryad.org/stash">Dryad</a>: Dryad is a curated resource that makes the data underlying scientific and medical literature discoverable and reusable.</li>
+<li><a href="https://data.mendeley.com/">Mendeley</a>: Mendeley is a reference manager and academic social network.</li>
+<li><a href="https://datahub.io/">Datahub</a>: Datahub is a data catalog for the modern data stack.</li>
+<li><a href="https://dans.knaw.nl/en/">Dans</a>: DANS is a Dutch institute for research data.</li>
+<li><a href="https://eudat.eu/services/b2share">Eudat</a>: EUDAT provides data management services for researchers in Europe.</li>
+</ul>
+</details>
+<details class="warning" open="open">
+<summary>Data Deposit Guard</summary>
+<ul>
+<li>In <code>bfxpm deposit go</code>, before opening a repository's website (like Zenodo or FigShare), a <strong>📂 Data Deposit Alert</strong> is now shown.</li>
+<li>The tool intelligently labels the repository as either <strong>"EU-based"</strong> (e.g., Zenodo, DANS, EUDAT) or <strong>"Outside the EU"</strong> based on its primary service location.</li>
+<li>It requires a final confirmation to ensure the user has reviewed the data for sensitive information and residency compliance before the browser is opened.</li>
+</ul>
+</details>
+<div class="highlight"><pre><span></span><code><span class="c1"># Prepare a publication-ready bundle</span>
+bfxpm<span class="w"> </span>deposit<span class="w"> </span>prepare<span class="w"> </span>--output<span class="w"> </span>my_project_v1.zip
+
+<span class="c1"># Open Zenodo deposit page</span>
+bfxpm<span class="w"> </span>deposit<span class="w"> </span>go<span class="w"> </span>zenodo
+</code></pre></div>
+<h3 id="12-agentic-ai-support">12. Agentic AI Support<a class="headerlink" href="#12-agentic-ai-support" title="Permanent link">&para;</a></h3>
+<p>BfxPM includes a project-aware <strong>BioAssistant</strong> to help you navigate your research and automate management tasks.</p>
+<ul>
+<li><strong>Setup</strong>: <code>bfxpm ai setup</code> to connect to Gemini or Ollama.</li>
+<li><strong>Consulting</strong>: Use <code>bfxpm ai chat</code> for an interactive session where the agent can see your file tree and help you organize your work.</li>
+<li><strong>Automation</strong>: Ask the agent to perform tasks like <em>"Clean up all empty directories in my results folder"</em>. BfxPM's <strong>Safety Interceptor</strong> ensures no destructive commands are run without confirmation and backup.</li>
+</ul>
+<p>For more details, see the dedicated <a href="../ai_agent/">AI Agent</a> page.</p>
+<h3 id="11-help">11. Help<a class="headerlink" href="#11-help" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bfxpm<span class="w"> </span>--help
+
+<span class="w"> </span>Usage:<span class="w"> </span>bfxpm<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...<span class="w">                                                                                                                                                                                                                                                                                                              </span>
+<span class="w"> </span><span class="c1">#=================================================# </span>
+<span class="w"> </span><span class="c1">#   BfxPM: Bioinformatician&#39;s Project Manager         #                                           </span>
+<span class="w"> </span><span class="c1">#=================================================#                                                                         </span>
+<span class="w"> </span>Purpose:<span class="w"> </span>Project<span class="w"> </span>Manager<span class="w"> </span>tool<span class="w"> </span><span class="k">for</span><span class="w"> </span>Bioinformaticians<span class="w">                                                                                               </span>
+<span class="w"> </span>Developer:<span class="w"> </span>Jyotirmoy<span class="w"> </span>Das<span class="w">                                                                                                                          </span>
+<span class="w"> </span>Maintainer:<span class="w"> </span>Jyotirmoy<span class="w"> </span>Das<span class="w">                                                                                                                         </span>
+<span class="w"> </span>Version:<span class="w"> </span><span class="m">0</span>.1.0<span class="w">                                                                                                                                    </span>
+
+<span class="w"> </span>Bioinformatician<span class="err">&#39;</span>s<span class="w"> </span>Project<span class="w"> </span>Manager<span class="w"> </span>CLI<span class="w">                                                                                                                </span>
+
+╭─<span class="w"> </span>Options<span class="w"> </span>───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--install-completion<span class="w">          </span>Install<span class="w"> </span>completion<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>shell.<span class="w">                                                                         </span>│
+│<span class="w"> </span>--show-completion<span class="w">             </span>Show<span class="w"> </span>completion<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>shell,<span class="w"> </span>to<span class="w"> </span>copy<span class="w"> </span>it<span class="w"> </span>or<span class="w"> </span>customize<span class="w"> </span>the<span class="w"> </span>installation.<span class="w">                                  </span>│
+│<span class="w"> </span>--help<span class="w">                        </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                                                                                       </span>│
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─<span class="w"> </span>Commands<span class="w"> </span>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>init<span class="w">         </span>Initialize<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>BfxPM<span class="w"> </span>project<span class="w"> </span>including<span class="w"> </span>folder<span class="w"> </span>structures<span class="w"> </span>and<span class="w"> </span>Git<span class="w"> </span>repository.<span class="w">                                                     </span>│
+│<span class="w"> </span>scan<span class="w">         </span>Scan<span class="w"> </span>a<span class="w"> </span>directory<span class="w"> </span><span class="k">for</span><span class="w"> </span>files,<span class="w"> </span>summarizing<span class="w"> </span>extensions<span class="w"> </span>and<span class="w"> </span>disk<span class="w"> </span>usage.<span class="w">                                                                 </span>│
+│<span class="w"> </span>organize<span class="w">     </span>Organize<span class="w"> </span>scattered<span class="w"> </span>files<span class="w"> </span>and<span class="w"> </span>handle<span class="w"> </span>unknown<span class="w"> </span>directories<span class="w"> </span>into<span class="w"> </span>a<span class="w"> </span>BfxPM<span class="w"> </span>project.<span class="w">                                                      </span>│
+│<span class="w"> </span>tree<span class="w">         </span>Show<span class="w"> </span>a<span class="w"> </span>beautiful<span class="w"> </span>tree<span class="w"> </span>view<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>directory<span class="w"> </span>and<span class="w"> </span>files.<span class="w">                                                                             </span>│
+│<span class="w"> </span>projects<span class="w">     </span>Scan<span class="w"> </span>and<span class="w"> </span>list<span class="w"> </span>all<span class="w"> </span>BfxPM<span class="w"> </span>projects<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>given<span class="w"> </span>directory.<span class="w">                                                                           </span>│
+│<span class="w"> </span>compress<span class="w">     </span>Compress<span class="w"> </span>a<span class="w"> </span>large<span class="w"> </span>folder<span class="w"> </span>to<span class="w"> </span>tar.gz<span class="w"> </span>to<span class="w"> </span>save<span class="w"> </span>space.<span class="w">                                                                                   </span>│
+│<span class="w"> </span>save<span class="w">         </span>Save<span class="w"> </span><span class="o">(</span>version<span class="w"> </span>control<span class="o">)</span><span class="w"> </span>your<span class="w"> </span>scripts<span class="w"> </span>and<span class="w"> </span>config.<span class="w">                                                                                    </span>│
+│<span class="w"> </span><span class="nb">history</span><span class="w">      </span>View<span class="w"> </span>a<span class="w"> </span>beautiful<span class="w"> </span>timeline<span class="w"> </span>of<span class="w"> </span>script<span class="w"> </span>modifications<span class="w"> </span>with<span class="w"> </span>usage<span class="w"> </span>details.<span class="w">                                                              </span>│
+│<span class="w"> </span>sync<span class="w">         </span>Sync<span class="w"> </span>your<span class="w"> </span>project<span class="w"> </span>progress<span class="w"> </span><span class="o">(</span>Git<span class="o">)</span><span class="w"> </span>and<span class="w"> </span>optionally<span class="w"> </span>your<span class="w"> </span>large<span class="w"> </span>data<span class="w"> </span>folder<span class="w"> </span><span class="o">(</span>Rsync<span class="o">)</span>.<span class="w">                                                    </span>│
+│<span class="w"> </span>login<span class="w">        </span>Save<span class="w"> </span>GitHub/Cloud<span class="w"> </span>token<span class="w"> </span>locally.<span class="w">                                                                                                   </span>│
+│<span class="w"> </span><span class="nb">logout</span><span class="w">       </span>Remove<span class="w"> </span>locally<span class="w"> </span>saved<span class="w"> </span>credentials.<span class="w">                                                                                                  </span>│
+│<span class="w"> </span>run_history<span class="w">  </span>Extract<span class="w"> </span>complex<span class="w"> </span>bioinformatics<span class="w"> </span>commands<span class="w"> </span>from<span class="w"> </span>shell<span class="w"> </span>history.<span class="w">                                                                        </span>│
+│<span class="w"> </span>show<span class="w">         </span>Show<span class="w"> </span>all<span class="w"> </span>the<span class="w"> </span>hidden<span class="w"> </span>files<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>project<span class="w"> </span>folder.<span class="w">                                                                                   </span>│
+│<span class="w"> </span>report<span class="w">       </span>Generate<span class="w"> </span>HTML/Markdown<span class="w"> </span>summary<span class="w"> </span>report<span class="w"> </span>and<span class="w"> </span>accompanying<span class="w"> </span>metadata<span class="w"> </span>files.<span class="w">                                                             </span>│
+│<span class="w"> </span>update<span class="w">       </span>Update<span class="w"> </span>BfxPM<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>latest<span class="w"> </span>version<span class="w"> </span>via<span class="w"> </span>pip.<span class="w">                                                                                                               </span>│
+│<span class="w"> </span>modify<span class="w">       </span>Manually<span class="w"> </span>move<span class="w"> </span>any<span class="w"> </span>files<span class="w"> </span>or<span class="w"> </span>directories<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>location.<span class="w">                                                                          </span>│
+│<span class="w"> </span>map<span class="w">          </span>Create<span class="w"> </span>a<span class="w"> </span>map<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>directory<span class="w"> </span>structure<span class="w"> </span>OR<span class="w"> </span>rollback<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>previous<span class="w"> </span>map.<span class="w">                                                     </span>│
+│<span class="w"> </span>clean<span class="w">        </span>Manage<span class="w"> </span>and<span class="w"> </span>clean<span class="w"> </span>project<span class="w"> </span>disk<span class="w"> </span>space<span class="w">                                                                                                </span>│
+│<span class="w"> </span>env<span class="w">          </span>Manage<span class="w"> </span>standard<span class="w"> </span>bioinformatics<span class="w"> </span>environments<span class="w">                                                                                        </span>│
+│<span class="w"> </span>pipeline<span class="w">     </span>Scaffold<span class="w"> </span>analysis<span class="w"> </span>pipelines<span class="w">                                                                                                        </span>│
+│<span class="w"> </span>fetch<span class="w">        </span>Fetch<span class="w"> </span>and<span class="w"> </span>route<span class="w"> </span>external<span class="w"> </span>biological<span class="w"> </span>data<span class="w">                                                                                           </span>│
+│<span class="w"> </span>checksum<span class="w">     </span>Manage<span class="w"> </span>data<span class="w"> </span>integrity<span class="w"> </span>using<span class="w"> </span>checksums<span class="w">                                                                                              </span>│
+│<span class="w"> </span>flow<span class="w">         </span>Record<span class="w"> </span>terminal<span class="w"> </span>sessions<span class="w"> </span>into<span class="w"> </span>scripts<span class="w">                                                                                              </span>│
+│<span class="w"> </span>deposit<span class="w">      </span>Deposit<span class="w"> </span>project<span class="w"> </span>data<span class="w"> </span>to<span class="w"> </span>public<span class="w"> </span>repositories<span class="w">                                                                        </span>│
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+</code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+  <div style="
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1.5em;
+    padding: 1em 2em;
+    border-top: 1px solid #000000;
+    color: #ffffff;
+    text-align: center;
+    background-color: #000000;
+  ">
+    <div style="flex: 1; text-align: left;">
+        © Jyotirmoy Das 2026 
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <code style="font-size: 0.8em;">
+        3D1F C87F 8D52 BFD4 5A1D <br> 3C86 63F2 2E14 6A0A 6B98
+      </code>
+    </div>
+    <div style="flex: 1; text-align: right;">
+      Made with <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" style="color: #ffffff;">MkDocs</a>
+    </div>
+  </div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.expand", "navigation.sections", "navigation.top", "content.code.annotate", "content.tabs.link", "navigation.tabs", "search.suggest", "search.highlight", "content.action.edit", "content.code.copy", "versioning", "icons"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Inter:wght@400;600&amp;display=swap"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../js/github-stats.js"></script>
+      
+    
+  </body>
+</html>
