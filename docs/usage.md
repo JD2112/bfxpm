@@ -289,6 +289,7 @@ $ bfxpm --help
 │ projects     Scan and list all BfxPM projects in the given directory.                                                                           │
 │ compress     Compress a large folder to tar.gz to save space.                                                                                   │
 │ save         Save (version control) your scripts and config.                                                                                    │
+│ bump         Automatically bump version, update changelog, and tag the release based on commit history.                                         │
 │ history      View a beautiful timeline of script modifications with usage details.                                                              │
 │ sync         Sync your project progress (Git) and optionally your large data folder (Rsync).                                                    │
 │ login        Save GitHub/Cloud token locally.                                                                                                   │

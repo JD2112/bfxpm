@@ -16,7 +16,7 @@ def test_env(tmp_path):
 
 def test_init_creates_structure(test_env):
     # Pass inputs via the prompt
-    result = runner.invoke(app, ["init"], input="Test Author\ntest_project\nn\n")
+    result = runner.invoke(app, ["init"], input="Test Author\ntest_project\nn\nn\n")
     assert result.exit_code == 0
     project_dir = test_env / "test_project"
     

@@ -7,7 +7,9 @@ build/
 *.egg-info/
 __pycache__/
 *.pyc
-
+site/
+scripts/publish_docs.sh
+scripts/publish.py
 # OS Files
 *.DS_Store
 
@@ -33,3 +35,6 @@ src/bfxpm/assets/git-essentials/dnam.puml
 src/bfxpm/assets/git-essentials/Docker’s multi-architecture support is b.md
 src/bfxpm/assets/git-essentials/index.html
 src/bfxpm/assets/git-essentials/update_repo_mike*.sh
+
+# Release and distribution staging folders
+release_stage/

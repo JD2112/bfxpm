@@ -21,7 +21,8 @@ BfxPM uses the `Typer` library to provide a rich CLI experience. The syntax is u
 | `bfxpm projects` | Scans a root directory for all BfxPM projects. Displays a table with names, authors, dates, and file counts. Use `--html` to generate a standalone web index of your research portfolio. |
 | `bfxpm tree` | Outputs a visual, rich-text `tree` view of the current project directory. Use `--all` or `-a` to show hidden files (e.g. `.git`). |
 | `bfxpm report` | Generates HTML/Markdown summary reports containing git history metrics, file usage stats, directory layouts, and dumps out accompanying ` summary.json` and ` summary.yml` metadata files. |
-| `bfxpm save` | A wrapper to `git commit -a -m "BfxPM Autosave"` to easily snapshot current scripts and configs. |
+| `bfxpm save` | Saves your project status to Git. If a message is omitted, launches an interactive Commitizen-style Conventional Commit prompter. |
+| `bfxpm bump` | Automatically calculates the correct semver version increment since the last release tag based on your Conventional Commit history, bumps version variables across your project configurations, prepends release updates to `CHANGELOG.md`, and tags a new release. |
 | `bfxpm history` | Views a beautiful timeline of script modifications based on your Git history. |
 | `bfxpm sync` | Syncs code (Git) and optionally data (Rsync). Use `--data` and `--remote [PATH]` for large data transfers. |
 | `bfxpm modify` | Manually prompts you to safely move any arbitrary files or directories to a new project location. |
