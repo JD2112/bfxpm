@@ -170,6 +170,56 @@ def sync(
     # 1. Git Sync
     try:
         repo = Repo(d)
+        
+        # Proactively check for .env and other secrets
+        sensitive_patterns = [
+            r"\.env$",
+            r"\.secrets?$",
+            r".*key.*",
+            r"id_rsa.*"
+        ]
+        
+        untracked_sensitive = []
+        tracked_sensitive = []
+        
+        for item in d.rglob("*"):
+            if item.is_file():
+                rel_path = item.relative_to(d)
+                
+                # Skip standard hidden directories (except actual .env/.secrets files)
+                if any(part.startswith('.') and part not in ['.env', '.secrets'] for part in rel_path.parts):
+                    continue
+                if '.venv' in rel_path.parts or 'node_modules' in rel_path.parts:
+                    continue
+                    
+                is_sensitive = False
+                for pat in sensitive_patterns:
+                    if re.match(pat, item.name, re.IGNORECASE):
+                        is_sensitive = True
+                        break
+                        
+                if is_sensitive:
+                    rel_str = str(rel_path)
+                    if rel_str in repo.untracked_files:
+                        untracked_sensitive.append(rel_str)
+                    else:
+                        tracked_sensitive.append(rel_str)
+                        
+        if tracked_sensitive:
+            console.print("\n[bold red]⚠️  CRITICAL WARNING: Tracked/Staged Sensitive Files Detected![/bold red]")
+            for f in tracked_sensitive:
+                console.print(f"  - [red]{f}[/red] (This file is tracked by Git and WILL be pushed!)")
+            console.print("[yellow]It is highly recommended to unstage/untrack these files and add them to your .gitignore before syncing.[/yellow]")
+            if not Confirm.ask("Do you still want to proceed with Git sync?", default=False):
+                console.print("[yellow]Sync aborted by user.[/yellow]")
+                raise typer.Exit(1)
+                
+        if untracked_sensitive:
+            console.print("\n[bold yellow]⚠️  WARNING: Untracked Sensitive Files Detected in Workspace![/bold yellow]")
+            for f in untracked_sensitive:
+                console.print(f"  - [yellow]{f}[/yellow] (Not tracked yet, but present in workspace)")
+            console.print("[yellow]Please ensure these files are added to your .gitignore to prevent accidental commits.[/yellow]\n")
+
         console.print("[yellow]Syncing Git repository...[/yellow]")
         origin = repo.remotes.origin
         origin.push()

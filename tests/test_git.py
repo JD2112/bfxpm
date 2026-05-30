@@ -46,3 +46,24 @@ def test_bump_no_commits(mock_get_dir, mock_repo_class, tmp_path):
     result = runner.invoke(app, ["bump"])
     assert result.exit_code == 0
     assert "No new commits found" in result.stdout
+
+@patch("bfxpm.commands.git_cmds.Repo")
+@patch("bfxpm.commands.git_cmds.get_project_dir")
+def test_sync_sensitive_files_warning(mock_get_dir, mock_repo_class, tmp_path):
+    mock_get_dir.return_value = tmp_path
+    
+    # Create an untracked .env file in temp folder
+    env_file = tmp_path / ".env"
+    env_file.touch()
+    
+    mock_repo = MagicMock()
+    mock_repo_class.return_value = mock_repo
+    mock_repo.untracked_files = [".env"]
+    
+    from typer.testing import CliRunner
+    from bfxpm.main import app
+    
+    runner = CliRunner()
+    result = runner.invoke(app, ["sync"])
+    
+    assert "WARNING: Untracked Sensitive Files Detected in Workspace" in result.stdout
